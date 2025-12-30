@@ -1,0 +1,60 @@
+   Trainable Parameters: 46.31M (46,313,636)
+
+⚙️  Computing FLOPs (this may take a moment)...
+⚠️  Using mock Mamba - for testing only!
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+[SegMamba] Initialized Pure Mamba architecture with 46,313,636 parameters
+[SegMamba] Using Mamba state-space blocks for global context modeling
+   Estimated FLOPs: 11.75G (11,753,545,728)
+
+   FLOPs Breakdown:
+     Conv3d: 11.75G
+     Linear: 2.68M
+
+🔄 Creating test input tensor...
+   Input shape: [1, 4, 128, 128, 64]
+   Input memory: 16.78 MB
+
+▶️  Running forward pass...
+✅ Forward pass successful!
+   Output shape: [1, 4, 128, 128, 64]
+   Output memory: 16.78 MB
+   Inference time: 142.16 ms
+
+💾 GPU Memory Usage:
+   Allocated: 0.23 GB
+   Reserved: 1.52 GB
+   Peak: 1.31 GB
+
+📈 Output Statistics:
+   Min: -430.3676
+   Max: 561.6037
+   Mean: 14.1539
+   Std: 126.1107
+
+🎲 Probability Distribution (after softmax):
+   Class 0: 0.0009
+   Class 1: 0.5266
+   Class 2: 0.0493
+   Class 3: 0.4232
+
+================================================================================
+✅ ALL TESTS PASSED!
+================================================================================
+
+📊 TensorBoard logs saved to: /storage2/CV_Irradiance/VMamba/BRTM/runs/forward_pass_test
+   View with: tensorboard --logdir=/storage2/CV_Irradiance/VMamba/BRTM/runs/forward_pass_test
