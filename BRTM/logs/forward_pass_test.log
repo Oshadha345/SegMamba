@@ -1,0 +1,129 @@
+2025-12-30 00:20:18.643057: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-30 00:20:18.691055: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-12-30 00:20:18.691092: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-12-30 00:20:18.692459: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-12-30 00:20:18.699037: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-12-30 00:20:19.410436: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Traceback (most recent call last):
+  File "/storage2/CV_Irradiance/VMamba/BRTM/test_forward_pass.py", line 226, in test_forward_pass
+    output = model(dummy_input)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/storage2/CV_Irradiance/VMamba/BRTM/models/segmamba.py", line 425, in forward
+    x, skip = encoder(x)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/storage2/CV_Irradiance/VMamba/BRTM/models/segmamba.py", line 226, in forward
+    skip = self.blocks(x)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/storage2/CV_Irradiance/VMamba/BRTM/models/segmamba.py", line 100, in forward
+    out = self.conv(x)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 717, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/userhomes/shehan15/.local/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 712, in _conv_forward
+    return F.conv3d(
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3, 3], expected input[1, 32, 64, 64, 32] to have 64 channels, but got 32 channels instead
+
+================================================================================
+⚠️  WARNING: mamba-ssm not available - using MOCK implementation for testing
+   This is NOT the real state-space model - for testing only!
+================================================================================
+
+================================================================================
+SegMamba Forward Pass Test
+================================================================================
+
+📊 TensorBoard logs: /storage2/CV_Irradiance/VMamba/BRTM/runs/forward_pass_test
+   View with: tensorboard --logdir=/storage2/CV_Irradiance/VMamba/BRTM/runs/forward_pass_test
+
+🖥️  Device: cuda
+   GPU: Quadro GV100
+   CUDA Version: 12.8
+   Memory: 34.08 GB
+
+📐 Model Configuration:
+   Input Channels: 4
+   Output Classes: 4
+   Base Channels: 32
+   Encoder Depths: [2, 2, 2, 2]
+   Patch Size: (128, 128, 64)
+
+🔨 Building SegMamba model...
+⚠️  Using mock Mamba - for testing only!
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+[SegMamba] Initialized Pure Mamba architecture with 42,209,988 parameters
+[SegMamba] Using Mamba state-space blocks for global context modeling
+✅ Model built successfully!
+
+📊 Model Statistics:
+   Total Parameters: 42.21M (42,209,988)
+   Trainable Parameters: 42.21M (42,209,988)
+
+⚙️  Computing FLOPs (this may take a moment)...
+⚠️  Using mock Mamba - for testing only!
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+⚠️  WARNING: Using MOCK Mamba implementation for testing!
+   This is NOT the real state-space model.
+   Install mamba-ssm for production use.
+[SegMamba] Initialized Pure Mamba architecture with 42,209,988 parameters
+[SegMamba] Using Mamba state-space blocks for global context modeling
+   ⚠️  Could not compute FLOPs: Given groups=1, weight of size [64, 64, 3, 3, 3], expected input[1, 32, 64, 64, 32] to have 64 channels, but got 32 channels instead
+
+🔄 Creating test input tensor...
+   Input shape: [1, 4, 128, 128, 64]
+   Input memory: 16.78 MB
+
+▶️  Running forward pass...
+❌ Forward pass failed: Given groups=1, weight of size [64, 64, 3, 3, 3], expected input[1, 32, 64, 64, 32] to have 64 channels, but got 32 channels instead
+
+📊 TensorBoard logs saved to: /storage2/CV_Irradiance/VMamba/BRTM/runs/forward_pass_test
+   View with: tensorboard --logdir=/storage2/CV_Irradiance/VMamba/BRTM/runs/forward_pass_test
